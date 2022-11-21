@@ -21,8 +21,14 @@ public class NoteDisplay : MonoBehaviour, IComparable<NoteDisplay>
         }
     }
 
-    [HideInInspector]
-    public NoteInfo Info;
+    public enum NoteState
+    {
+        ToPlay,
+        ToRemove
+    }
+
+    [HideInInspector] public NoteInfo Info;
+    [HideInInspector] public NoteState State;
 
     // Start Method
     void Start()
@@ -36,8 +42,10 @@ public class NoteDisplay : MonoBehaviour, IComparable<NoteDisplay>
         
     }
 
+    protected float ComparableFactor { get => Info.playTime + (State == NoteState.ToRemove ? Info.duration : 0f); }
+
     public int CompareTo(NoteDisplay other)
     {
-        return (Info.playTime + Info.duration).CompareTo(other.Info.playTime + other.Info.duration);
+        return ComparableFactor.CompareTo(other.ComparableFactor);
     }
 }

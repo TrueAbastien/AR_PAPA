@@ -592,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5126007675747059428, guid: 5431ca14125da904d903da32d7da65e5, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5126007675747059428, guid: 5431ca14125da904d903da32d7da65e5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1154,7 +1154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5733841072989372922, guid: 4b8cf9b017b6e044589323100e7bb98c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5733841072989372922, guid: 4b8cf9b017b6e044589323100e7bb98c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,7 +1215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 673047343869339924, guid: eee6a024b4a153e48b88665b46a6c40a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 673047343869339924, guid: eee6a024b4a153e48b88665b46a6c40a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1356,7 +1356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4679913627488335818, guid: 4b829e947ae32f846b74608a608dcb2a, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4679913627488335818, guid: 4b829e947ae32f846b74608a608dcb2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1504,6 +1504,74 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1401228211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1367716147436054, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_Name
+      value: MidiStreamPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4977113046780174, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+--- !u!114 &1401228212 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114320350483668748, guid: f1aa4788763f8854c9826e449686c328, type: 3}
+  m_PrefabInstance: {fileID: 1401228211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a10fc17731b73e545b0078250340235c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1521545575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1561,7 +1629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82585700720091338, guid: 32a8d8859acf18d4ba134834a876d5ea, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114662785300262660, guid: 32a8d8859acf18d4ba134834a876d5ea, type: 3}
       propertyPath: showEvents
@@ -1647,7 +1715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5693620179420127159, guid: 79169641a4386eb47a6fe5022ce36e07, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5693620179420127159, guid: 79169641a4386eb47a6fe5022ce36e07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1706,9 +1774,13 @@ PrefabInstance:
       propertyPath: MidiPlayer
       value: 
       objectReference: {fileID: 509470135}
+    - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
+      propertyPath: MidiStream
+      value: 
+      objectReference: {fileID: 1401228212}
     - target: {fileID: 3593402573160411434, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3593402573160411434, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: m_LocalPosition.x

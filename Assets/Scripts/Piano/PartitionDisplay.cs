@@ -15,6 +15,7 @@ public class PartitionDisplay : MonoBehaviour
     public GameObject Limiter;
     public List<float> KeysWidth;
     public MidiFilePlayer MidiPlayer;
+    public MidiStreamPlayer MidiStream;
 
     // Private Members
     private List<NoteDisplay.NoteInfo> notesInfo = new();
@@ -83,7 +84,7 @@ public class PartitionDisplay : MonoBehaviour
     {
         internalTimer += Time.deltaTime;
 
-        // Play New Notes
+        // Display New Notes
         while (notesInfo.Count > 0 && internalTimer > notesInfo[0].playTime - AdvertTime)
         {
             NoteDisplay.NoteInfo note = notesInfo[0];
@@ -108,9 +109,28 @@ public class PartitionDisplay : MonoBehaviour
             if (noteGO.TryGetComponent(out NoteDisplay noteDisplay))
             {
                 noteDisplay.Info = note;
-                notesToRemove.AddSorted(noteDisplay);
+                noteDisplay.State = NoteDisplay.NoteState.ToPlay;
+                notesToPlay.AddSorted(noteDisplay);
             }
             notesInfo.RemoveAt(0);
+        }
+
+        // Play New Notes
+        while (notesToPlay.Count > 0)
+        {
+            NoteDisplay note = notesToPlay[0];
+            if (internalTimer < note.Info.playTime)
+            {
+                break;
+            }
+
+            // Play Note
+            MidiStream.MPTK_PlayEvent(note.Info.mptk);
+
+            // Move Note
+            note.State = NoteDisplay.NoteState.ToRemove;
+            notesToPlay.RemoveAt(0);
+            notesToRemove.AddSorted(note);
         }
 
         // Remove Old Notes
