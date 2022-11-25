@@ -750,7 +750,6 @@ GameObject:
   m_Component:
   - component: {fileID: 283636972}
   - component: {fileID: 283636971}
-  - component: {fileID: 283636973}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -770,6 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0609b40d65d9745956080039434578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MidiStream: {fileID: 1401228212}
 --- !u!4 &283636972
 Transform:
   m_ObjectHideFlags: 0
@@ -785,36 +785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &283636973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283636970}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6547f6e31ed08374eb7cd93604c78711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  midiNameToPlay: All Night Long
-  midiIndexToPlay: 2
-  MPTK_LogEvents: 0
-  MPTK_KeepNoteOff: 0
-  MPTK_KeepEndTrack: 0
-  MPTK_InitialTempo: 107
-  MPTK_TickLast: 63003
-  MPTK_NumberBeatsMeasure: 4
-  MPTK_NumberQuarterBeat: 4
-  MPTK_TimeSigNumerator: 4
-  MPTK_TimeSigDenominator: 2
-  MPTK_KeySigSharpsFlats: 0
-  MPTK_KeySigMajorMinor: 0
-  MPTK_TicksInMetronomeClick: 24
-  MPTK_No32ndNotesInQuarterNote: 8
-  MPTK_MicrosecondsPerQuarterNote: 555556
-  MPTK_DeltaTicksPerQuarterNote: 96
-  MPTK_TrackCount: 1
 --- !u!1 &399325660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,6 +1795,10 @@ PrefabInstance:
     - target: {fileID: 8207352162815260408, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: m_Name
       value: Partition
+      objectReference: {fileID: 0}
+    - target: {fileID: 8207352162815260408, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
