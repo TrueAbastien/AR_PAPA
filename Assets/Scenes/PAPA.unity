@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 31a611a779d3499e8e35f1a2018ca841, type: 2}
+  activeProfile: {fileID: 11400000, guid: ce3d3d6c4dd2e8541b3644a623d0cc03, type: 2}
 --- !u!4 &1729424040
 Transform:
   m_ObjectHideFlags: 0
@@ -1736,6 +1736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
+      propertyPath: HasSound
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: AdvertTime
       value: 10

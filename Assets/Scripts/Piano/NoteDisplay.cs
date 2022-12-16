@@ -11,9 +11,8 @@ public class NoteDisplay : MonoBehaviour, IComparable<NoteDisplay>
         public float playTime;
         public float duration;
         public int keyIndex;
+        public bool isBlack;
         public MPTKEvent mptk;
-
-        //public Color? overridenColor;
 
         public int CompareTo(NoteInfo other) 
         {

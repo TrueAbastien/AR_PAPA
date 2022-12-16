@@ -8,6 +8,7 @@ using UnityEngine;
 public class PartitionDisplay : MonoBehaviour
 {
     // Input Parameters
+    public bool HasSound = true;
     public GameObject NotePrefab;
     public GameObject NoteContainer;
     public float AdvertTime;
@@ -125,7 +126,10 @@ public class PartitionDisplay : MonoBehaviour
             }
 
             // Play Note
-            MidiStream.MPTK_PlayEvent(note.Info.mptk);
+            if (HasSound)
+            {
+                MidiStream.MPTK_PlayEvent(note.Info.mptk);
+            }
 
             // Move Note
             note.State = NoteDisplay.NoteState.ToRemove;
