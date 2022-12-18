@@ -85,12 +85,18 @@ public class PartitionDisplay : MonoBehaviour
             // Display Note
             GameObject noteGO = GameObject.Instantiate(NotePrefab, NoteContainer.transform);
             KeyMarker refKey = __keys[note.keyIndex];
-            noteGO.transform.position = Limiter.transform.position + refKey.upper *
-                (note.playTime - internalTimer + note.duration) * AdvertRatio;
+
+            // Position
+            Vector3 position = Limiter.transform.position +
+                refKey.upper * (note.playTime - internalTimer + note.duration) * AdvertRatio;
+            position.x = refKey.transform.position.x;
+            noteGO.transform.position = position;
+
+            // Rotation
             noteGO.transform.rotation = NoteContainer.transform.rotation;
 
             // Scaling
-            noteGO.transform.Rescale(refKey.transform.lossyScale.x * 1e-2f, note.duration * AdvertRatio);
+            noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio);
 
             // Velocity
             if (noteGO.TryGetComponent(out Rigidbody noteRB))
