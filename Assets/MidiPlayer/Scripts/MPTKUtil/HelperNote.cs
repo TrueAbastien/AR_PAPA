@@ -15,7 +15,7 @@ namespace MidiPlayerTK
         public string Label;
         public bool Sharp = false;
 
-        static List<HelperNoteLabel> ListNote;
+        public static List<HelperNoteLabel> ListNote;
         static List<HelperNoteLabel> ListEcart;
         static public float _ratioHalfTone = 0.0594630943592952645618252949463f;
 

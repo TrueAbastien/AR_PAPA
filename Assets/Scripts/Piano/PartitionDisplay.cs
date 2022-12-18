@@ -14,7 +14,6 @@ public class PartitionDisplay : MonoBehaviour
     public float AdvertTime;
     public float AdvertHeight;
     public GameObject Limiter;
-    public List<float> KeysWidth;
     public MidiFilePlayer MidiPlayer;
     public MidiStreamPlayer MidiStream;
 
@@ -24,8 +23,7 @@ public class PartitionDisplay : MonoBehaviour
     private List<NoteDisplay> notesToPlay = new(), notesToRemove = new();
 
     // Baked Info
-    internal List<float> __cummulativeKeysWidth = new();
-    internal float __keysWidthSum;
+    internal List<KeyMarker> __keys = new();
 
     // Properties
     private float AdvertRatio { get => AdvertHeight / AdvertTime; }
@@ -45,16 +43,10 @@ public class PartitionDisplay : MonoBehaviour
         }
 
         // 'Baking' Info
-        float widthSum = 0f;
-        foreach (float width in KeysWidth)
+        foreach (KeyMarker key in Limiter.GetComponentsInChildren<KeyMarker>())
         {
-            __cummulativeKeysWidth.Add(widthSum + 0.5f * width);
-            widthSum += width;
+            __keys.AddSorted(key);
         }
-        __keysWidthSum = widthSum;
-
-        // Limiter Scaling
-        Limiter.transform.Rescale(widthSum);
     }
 
     private void NotesToPlay(List<MPTKEvent> notes)
@@ -63,7 +55,7 @@ public class PartitionDisplay : MonoBehaviour
         {
             if (note.Command == MPTKCommand.NoteOn && note.Duration > 0)
             {
-                if (note.Value >= 36 && note.Value < 36 + KeysWidth.Count)
+                if (note.Value >= 36 && note.Value < 36 + __keys.Count)
                 {
                     // TODO: make this better
                     notesInfo.AddSorted(new NoteDisplay.NoteInfo()
@@ -92,18 +84,18 @@ public class PartitionDisplay : MonoBehaviour
 
             // Display Note
             GameObject noteGO = GameObject.Instantiate(NotePrefab, NoteContainer.transform);
-            noteGO.transform.position = NoteContainer.transform.position + new Vector3(
-                __cummulativeKeysWidth[note.keyIndex] - __keysWidthSum / 2f,
-                (note.playTime - internalTimer + note.duration) * AdvertRatio);
+            KeyMarker refKey = __keys[note.keyIndex];
+            noteGO.transform.position = Limiter.transform.position + refKey.upper *
+                (note.playTime - internalTimer + note.duration) * AdvertRatio;
             noteGO.transform.rotation = NoteContainer.transform.rotation;
 
             // Scaling
-            noteGO.transform.Rescale(KeysWidth[note.keyIndex], note.duration * AdvertRatio);
+            noteGO.transform.Rescale(refKey.transform.lossyScale.x * 1e-2f, note.duration * AdvertRatio);
 
             // Velocity
             if (noteGO.TryGetComponent(out Rigidbody noteRB))
             {
-                noteRB.velocity = -noteGO.transform.up * AdvertRatio;
+                noteRB.velocity = -refKey.upper * AdvertRatio;
             }
 
             // Add & Remove

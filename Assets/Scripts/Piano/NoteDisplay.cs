@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class NoteDisplay : MonoBehaviour, IComparable<NoteDisplay>
 {
+    [Serializable]
     public class NoteInfo : IComparable<NoteInfo>
     {
         public float playTime;
