@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c541849e5e5c1c40953c2caad45a839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasSound: 0
+  HasSound: 1
   NotePrefab: {fileID: 1135560774671472144, guid: 79169641a4386eb47a6fe5022ce36e07, type: 3}
   NoteContainer: {fileID: 5698605994646562741}
   AdvertTime: 10
@@ -201,6 +201,7 @@ MonoBehaviour:
   Limiter: {fileID: 2053312947791173700}
   MidiPlayer: {fileID: 0}
   MidiStream: {fileID: 0}
+  BlackColor: {r: 0.097232126, g: 0.32368907, b: 0.8962264, a: 0.70980394}
 --- !u!1001 &7288095203769980651
 PrefabInstance:
   m_ObjectHideFlags: 0

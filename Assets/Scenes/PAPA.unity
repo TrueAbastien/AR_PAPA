@@ -1737,10 +1737,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
-      propertyPath: HasSound
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: MidiPlayer
       value: 
       objectReference: {fileID: 509470135}

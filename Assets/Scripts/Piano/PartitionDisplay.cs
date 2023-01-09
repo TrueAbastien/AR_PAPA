@@ -16,6 +16,7 @@ public class PartitionDisplay : MonoBehaviour
     public GameObject Limiter;
     public MidiFilePlayer MidiPlayer;
     public MidiStreamPlayer MidiStream;
+    public Color BlackColor;
 
     // Private Members
     private List<NoteDisplay.NoteInfo> notesInfo = new();
@@ -97,6 +98,17 @@ public class PartitionDisplay : MonoBehaviour
 
             // Scaling
             noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio);
+
+            // Key Color
+            if (refKey.isBlack)
+            {
+                noteGO.transform.position += noteGO.transform.forward * 1e-2f;
+                noteGO.GetComponentInChildren<MeshRenderer>().material.color = BlackColor;
+            }
+            else
+            {
+                noteGO.transform.position += noteGO.transform.forward * 3e-2f;
+            }
 
             // Velocity
             if (noteGO.TryGetComponent(out Rigidbody noteRB))
