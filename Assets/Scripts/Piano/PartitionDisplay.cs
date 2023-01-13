@@ -88,9 +88,9 @@ public class PartitionDisplay : MonoBehaviour
             KeyMarker refKey = __keys[note.keyIndex];
 
             // Position
-            Vector3 position = Limiter.transform.position +
-                refKey.upper * (note.playTime - internalTimer + note.duration) * AdvertRatio;
-            position.x = refKey.transform.position.x;
+            Vector3 position = refKey.transform.position
+                + refKey.upper * (note.playTime - internalTimer + note.duration) * AdvertRatio
+                + refKey.upper * Vector3.Dot(Limiter.transform.position - refKey.transform.position, refKey.upper);
             noteGO.transform.position = position;
 
             // Rotation
@@ -170,6 +170,31 @@ public class PartitionDisplay : MonoBehaviour
             }
         }
     }
+
+    public void Stop()
+    {
+        MidiPlayer?.MPTK_Stop();
+
+        foreach (NoteDisplay note in notesToPlay)
+        {
+            Destroy(note.gameObject);
+        }
+        foreach (NoteDisplay note in notesToRemove)
+        {
+            Destroy(note.gameObject);
+        }
+
+        notesInfo.Clear();
+        notesToPlay.Clear();
+        notesToRemove.Clear();
+    }
+
+    public void Play(string filePath)
+    {
+        MidiPlayer?.MPTK_Play(); // TEMP
+
+        // TODO
+    }     
 }
 
 public static class Extensions
