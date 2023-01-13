@@ -16,6 +16,7 @@ public class PartitionDisplay : MonoBehaviour
     public GameObject Limiter;
     public MidiFilePlayer MidiPlayer;
     public MidiStreamPlayer MidiStream;
+    public Color BlackColor;
 
     // Private Members
     private List<NoteDisplay.NoteInfo> notesInfo = new();
@@ -87,9 +88,9 @@ public class PartitionDisplay : MonoBehaviour
             KeyMarker refKey = __keys[note.keyIndex];
 
             // Position
-            Vector3 position = Limiter.transform.position +
-                refKey.upper * (note.playTime - internalTimer + note.duration) * AdvertRatio;
-            position.x = refKey.transform.position.x;
+            Vector3 position = refKey.transform.position
+                + refKey.upper * (note.playTime - internalTimer + note.duration) * AdvertRatio
+                + refKey.upper * Vector3.Dot(Limiter.transform.position - refKey.transform.position, refKey.upper);
             noteGO.transform.position = position;
 
             // Rotation
@@ -97,6 +98,17 @@ public class PartitionDisplay : MonoBehaviour
 
             // Scaling
             noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio);
+
+            // Key Color
+            if (refKey.isBlack)
+            {
+                noteGO.transform.position += noteGO.transform.forward * 1e-2f;
+                noteGO.GetComponentInChildren<MeshRenderer>().material.color = BlackColor;
+            }
+            else
+            {
+                noteGO.transform.position += noteGO.transform.forward * 3e-2f;
+            }
 
             // Velocity
             if (noteGO.TryGetComponent(out Rigidbody noteRB))
@@ -158,6 +170,31 @@ public class PartitionDisplay : MonoBehaviour
             }
         }
     }
+
+    public void Stop()
+    {
+        MidiPlayer?.MPTK_Stop();
+
+        foreach (NoteDisplay note in notesToPlay)
+        {
+            Destroy(note.gameObject);
+        }
+        foreach (NoteDisplay note in notesToRemove)
+        {
+            Destroy(note.gameObject);
+        }
+
+        notesInfo.Clear();
+        notesToPlay.Clear();
+        notesToRemove.Clear();
+    }
+
+    public void Play(string filePath)
+    {
+        MidiPlayer?.MPTK_Play(); // TEMP
+
+        // TODO
+    }     
 }
 
 public static class Extensions

@@ -62,6 +62,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707b0e35c62cc264b8445df070ac8c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Info:
+    playTime: 0
+    duration: 0
+    keyIndex: 0
+    isBlack: 0
+  State: 0
 --- !u!1 &6776814562135724481
 GameObject:
   m_ObjectHideFlags: 0
