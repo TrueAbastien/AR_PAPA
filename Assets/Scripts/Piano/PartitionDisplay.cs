@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Microsoft.MixedReality.Toolkit.UI;
 
 public class PartitionDisplay : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PartitionDisplay : MonoBehaviour
     public MidiFilePlayer MidiPlayer;
     public MidiStreamPlayer MidiStream;
     public Color BlackColor;
+    public GameObject piano;
 
     // Private Members
     private List<NoteDisplay.NoteInfo> notesInfo = new();
@@ -33,7 +35,6 @@ public class PartitionDisplay : MonoBehaviour
     void Start()
     {
         internalTimer = 0f;
-        
         // Listened to Played Music
         if (MidiPlayer != null)
         {
@@ -77,7 +78,6 @@ public class PartitionDisplay : MonoBehaviour
     void Update()
     {
         internalTimer += Time.deltaTime;
-
         // Display New Notes
         while (notesInfo.Count > 0 && internalTimer > notesInfo[0].playTime - AdvertTime)
         {
