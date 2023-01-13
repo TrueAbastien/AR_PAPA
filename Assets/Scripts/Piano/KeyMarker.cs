@@ -14,7 +14,7 @@ public class KeyMarker : MonoBehaviour, IComparable<KeyMarker>
 
     private int keyCode(KeyMarker key)
     {
-        return HelperNoteLabel.ListNote.FirstOrDefault(e => e.Label == key.name)?.Midi ?? int.MaxValue;
+        return HelperNoteLabel.ListNote.FirstOrDefault(e => e.Label == key.key)?.Midi ?? int.MaxValue;
     }
     public int CompareTo(KeyMarker other)
     {

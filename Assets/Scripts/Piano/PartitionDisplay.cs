@@ -22,6 +22,7 @@ public class PartitionDisplay : MonoBehaviour
     private List<NoteDisplay.NoteInfo> notesInfo = new();
     private float internalTimer;
     private List<NoteDisplay> notesToPlay = new(), notesToRemove = new();
+    private int noteOffset = 48;
 
     // Baked Info
     internal List<KeyMarker> __keys = new();
@@ -56,14 +57,14 @@ public class PartitionDisplay : MonoBehaviour
         {
             if (note.Command == MPTKCommand.NoteOn && note.Duration > 0)
             {
-                if (note.Value >= 36 && note.Value < 36 + __keys.Count)
+                if (note.Value >= noteOffset && note.Value < noteOffset + __keys.Count)
                 {
                     // TODO: make this better
                     notesInfo.AddSorted(new NoteDisplay.NoteInfo()
                     {
                         playTime = internalTimer + AdvertTime,
                         duration = 1e-3f * note.Duration,
-                        keyIndex = note.Value - 36,
+                        keyIndex = note.Value - noteOffset,
                         mptk = note
                     });
                 }
