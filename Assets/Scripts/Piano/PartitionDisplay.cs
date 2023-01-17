@@ -98,17 +98,17 @@ public class PartitionDisplay : MonoBehaviour
             noteGO.transform.rotation = Manipulator.transform.rotation;
 
             // Scaling
-            noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio);
+            noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio, 4e-1f);
 
             // Key Color
             if (refKey.isBlack)
             {
-                noteGO.transform.position += noteGO.transform.forward * 1e-2f;
+                noteGO.transform.position += noteGO.transform.forward * -2e-3f;
                 noteGO.GetComponentInChildren<MeshRenderer>().material.color = BlackColor;
             }
             else
             {
-                noteGO.transform.position += noteGO.transform.forward * 3e-2f;
+                noteGO.transform.position += noteGO.transform.forward * -1e-3f;
             }
 
             // Velocity
