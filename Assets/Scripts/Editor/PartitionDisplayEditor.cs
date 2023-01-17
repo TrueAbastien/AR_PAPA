@@ -15,7 +15,7 @@ public class PartitionDisplayEditor : Editor
         if (GUILayout.Button("Play"))
         {
             partition.Stop();
-            partition.Play("");
+            partition.Play();
         }
         else if (GUILayout.Button("Stop"))
         {

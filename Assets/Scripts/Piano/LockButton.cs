@@ -24,16 +24,18 @@ public class LockButton : MonoBehaviour
         ObjectManipulator manipulator = objectToLock.GetComponent<ObjectManipulator>();
         if (IsLocked)
         {
-            manipulator.enabled = false;
+            manipulator.enabled = true;
             //TODO: Display Play button
             this.IsLocked = false;
+            helper.MainLabelText = "Unlocked";
             helper.SetSpriteIconByName("unlock");
         }
         else
         {
-            manipulator.enabled = true;
+            manipulator.enabled = false;
             // TODO: Hide Play button
             this.IsLocked = true;
+            helper.MainLabelText = "Locked";
             helper.SetSpriteIconByName("lock");
         }
     }

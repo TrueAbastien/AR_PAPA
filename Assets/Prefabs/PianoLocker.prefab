@@ -250,9 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844bfb138ae0ebd479db92075d34e4aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lock: {fileID: 0}
-  LockButtonTexture: {fileID: 0}
-  UnlockButtonTexture: {fileID: 0}
+  objectToLock: {fileID: 0}
 --- !u!4 &4593334075220593132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2204069623020599746, guid: 3f1f46cbecbe08e46a303ccfdb5b498a, type: 3}

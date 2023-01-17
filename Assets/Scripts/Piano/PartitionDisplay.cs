@@ -15,10 +15,10 @@ public class PartitionDisplay : MonoBehaviour
     public float AdvertTime;
     public float AdvertHeight;
     public GameObject Limiter;
+    public GameObject Manipulator;
     public MidiFilePlayer MidiPlayer;
     public MidiStreamPlayer MidiStream;
     public Color BlackColor;
-    public GameObject piano;
 
     // Private Members
     private List<NoteDisplay.NoteInfo> notesInfo = new();
@@ -94,7 +94,7 @@ public class PartitionDisplay : MonoBehaviour
             noteGO.transform.position = position;
 
             // Rotation
-            noteGO.transform.rotation = NoteContainer.transform.rotation;
+            noteGO.transform.rotation = Manipulator.transform.rotation;
 
             // Scaling
             noteGO.transform.Rescale(refKey.transform.lossyScale.x * 2e-2f, note.duration * AdvertRatio);
@@ -189,11 +189,14 @@ public class PartitionDisplay : MonoBehaviour
         notesToRemove.Clear();
     }
 
-    public void Play(string filePath)
+    public void Play()
     {
-        MidiPlayer?.MPTK_Play(); // TEMP
-
-        // TODO
+        ObjectManipulator manipulator = Manipulator.GetComponent<ObjectManipulator>(); 
+        if (!manipulator.enabled)
+        {
+            MidiPlayer?.MPTK_Play(); // TEMP
+            // TODO
+        }
     }     
 }
 

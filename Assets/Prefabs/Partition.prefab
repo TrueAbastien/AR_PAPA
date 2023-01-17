@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1325631865952905879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5796250989201073455}
+  m_Layer: 0
+  m_Name: Manipulator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5796250989201073455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325631865952905879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9194749557860780971}
+  m_Father: {fileID: 3593402573160411434}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1722115013691042506
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,11 +91,11 @@ Transform:
   m_GameObject: {fileID: 2053312947791173700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.05, z: 0.03}
+  m_LocalScale: {x: 1, y: 0.050000004, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7790061100607536080}
-  m_Father: {fileID: 3593402573160411434}
+  m_Father: {fileID: 5796250989201073455}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2325309753286691602
@@ -145,7 +177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3593402573160411434}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6296166257553548655
 GameObject:
@@ -208,8 +240,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9194749557860780971}
   - {fileID: 4705279232180540988}
+  - {fileID: 5796250989201073455}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -231,6 +263,7 @@ MonoBehaviour:
   AdvertTime: 10
   AdvertHeight: 5
   Limiter: {fileID: 2053312947791173700}
+  Manipulator: {fileID: 0}
   MidiPlayer: {fileID: 0}
   MidiStream: {fileID: 0}
   BlackColor: {r: 0.097232126, g: 0.32368907, b: 0.8962264, a: 0.70980394}

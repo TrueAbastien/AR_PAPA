@@ -15,8 +15,12 @@ MonoBehaviour:
   quadIcons:
   - {fileID: 2800000, guid: 6307ad607b9721d45bb6e55061bae0d7, type: 3}
   - {fileID: 2800000, guid: b0b911393c816f044b758f1f8196ea80, type: 3}
+  - {fileID: 2800000, guid: 7a41d02b8a74e51489494ee83956d9ef, type: 3}
+  - {fileID: 2800000, guid: c31f82e17e99df244ba57adf55dc22df, type: 3}
   spriteIcons:
   - {fileID: 21300000, guid: 6307ad607b9721d45bb6e55061bae0d7, type: 3}
   - {fileID: 21300000, guid: b0b911393c816f044b758f1f8196ea80, type: 3}
+  - {fileID: 21300000, guid: 7a41d02b8a74e51489494ee83956d9ef, type: 3}
+  - {fileID: 21300000, guid: c31f82e17e99df244ba57adf55dc22df, type: 3}
   charIconFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   charIcons: []
