@@ -11,9 +11,10 @@
   </SoundFonts>
   <IndexSelectedSF>0</IndexSelectedSF>
   <MidiFiles>
+    <string>001 - Au claire de la lune</string>
+    <string>002 - Frère Jacques</string>
+    <string>003 - Meunier tu dors</string>
+    <string>004 - Une souris verte</string>
     <string>Bach - Toccata in D minor Piano</string>
-    <string>chromatic_scale_test</string>
-    <string>mounie_tu_dors</string>
-    <string>une_souris_verte</string>
   </MidiFiles>
 </MidiSet>
