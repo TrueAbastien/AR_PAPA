@@ -195,8 +195,8 @@ public class PartitionDisplay : MonoBehaviour
         ObjectManipulator manipulator = Manipulator.GetComponent<ObjectManipulator>(); 
         if (!manipulator.enabled)
         {
-            MidiPlayer?.MPTK_Play(); // TEMP
-            // TODO
+            MidiPlayer.MPTK_MidiIndex = index;
+            MidiPlayer.MPTK_Play();
         }
     }     
 }
