@@ -190,7 +190,7 @@ public class PartitionDisplay : MonoBehaviour
         notesToRemove.Clear();
     }
 
-    public void Play()
+    public void Play(int index)
     {
         ObjectManipulator manipulator = Manipulator.GetComponent<ObjectManipulator>(); 
         if (!manipulator.enabled)

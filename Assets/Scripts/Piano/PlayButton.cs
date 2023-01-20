@@ -7,6 +7,7 @@ public class PlayButton : MonoBehaviour
 {
     private bool IsPlaying = false;
     public GameObject Piano;
+    public PianoTrackSelector TrackSelector;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +35,7 @@ public class PlayButton : MonoBehaviour
             this.IsPlaying = true;
             helper.MainLabelText = "Stop";
             helper.SetSpriteIconByName("stop");
-            partition.Play();
+            partition.Play(TrackSelector.SelectedTrack);
         }
     }
 }
