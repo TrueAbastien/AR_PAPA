@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StopKey: 8
-  PlayKeys: 01010000020100000301000004010000
+  PlayKeys: 0101000002010000030100000401000000010000
   Partition: {fileID: 9058134425259351499}
 --- !u!4 &924940563
 Transform:
@@ -1897,6 +1897,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1229583950256178702, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
+      propertyPath: HasSound
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1262667681609330966, guid: ebb8187a551e4404f9afd961479f01be, type: 3}
